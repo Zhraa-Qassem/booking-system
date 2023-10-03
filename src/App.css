@@ -1,7 +1,9 @@
 body {
   background-color: rgb(138, 225, 153);
 }
-
+.home{
+font-family: 'Courier New', Courier, monospace;
+}
 .navBar {
   align-self: center;
   margin: auto;
@@ -11,8 +13,8 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 80vw;
- height: auto;
+  width: 1215px;
+ height: 88;
   background-color: white;
   box-shadow: rgb(0, 0, 0);
   margin-bottom: 20px;
@@ -28,3 +30,44 @@ body {
   padding: 10px;
   display: inline-flex;
 }
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.left {
+  flex: 1;
+  padding: 20px;
+}
+
+.left h1 {
+  font-size: 24px;
+}
+
+.left h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.left button {
+
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.right {
+  flex: 1;
+  text-align: center;
+}
+
+.right img {
+  max-width: 100%;
+  height: auto;
+}
+
