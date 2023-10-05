@@ -4,6 +4,7 @@
 }
 
 .home {
+
   margin: 0;
   padding: 0;
   background-color: #386641;
@@ -13,7 +14,7 @@
   align-self: center;
   margin: auto;
   margin-top: 10px;
-  height: 88px;
+  height: 70px;
   width: 1215px;
   border-radius: 15px;
   display: flex;
@@ -95,7 +96,36 @@ h1 {
   margin: 15px;
 }
 
-.btn {
+/* buttons */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wt-btn{
+  background-color: #FFF;
+  color: #328B56;
+}
+.btn{
+  background-color: #328B56;
+  color: #FFF;
+}
+.btn,.wt-btn {
+  width: 188px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.home-btn {
   width: 137px;
   height: 36px;
   border-radius: 10px;
@@ -104,6 +134,19 @@ h1 {
   font-size: 14px;
   font-weight: bold;
 }
+
+.add-btn {
+  width: 98px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(34, 79, 52, 0.40);
+  border: none;
+  color: #FFF;
+}
+
+/* end of buttons */
 
 .right {
   flex: 1;
@@ -126,23 +169,21 @@ h1 {
 }
 
 /* where to page  */
-.add, .where-to {
+.add,
+.where-to {
   background-color: #386641;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
-.add-card, .where-card {
-
+.add-card,
+.where-card {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* Center vertically */
   align-items: center;
-  /* Center horizontally */
   gap: 100px;
   width: 1292px;
   height: 700px;
@@ -159,7 +200,8 @@ h1 {
       white 100%);
 }
 
-.add-header,.where-header {
+.add-header,
+.where-header {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -167,8 +209,10 @@ h1 {
   gap: 33px;
 }
 
-.add-header, .where-header h1 {
-  color: #DE6A16;
+.add-header h1,
+.where-header h1,
+.report h1 {
+  color: #de6a16;
   font-family: Montserrat;
   font-size: 46px;
   font-style: normal;
@@ -176,23 +220,19 @@ h1 {
   line-height: 24px;
   letter-spacing: 0.46px;
 }
-.add-header h1{
-  color: #DE6A16;
-font-family: Montserrat;
-font-size: 42px;
-font-style: normal;
-font-weight: 600;
-line-height: 24px; 
-letter-spacing: 0.46px;
+
+.add-header h1 {
+  font-size: 44px;
 }
 
-.add-p,.where-p {
+.add-p,
+.where-p {
   text-align: start;
   align-items: start;
 }
 
-.add-p, .where-p p {
-
+.add-p p,
+.where-p p {
   color: #000;
   font-family: Montserrat;
   font-size: 14px;
@@ -202,7 +242,8 @@ letter-spacing: 0.46px;
   letter-spacing: 0.14px;
 }
 
-.add-input,.where-input {
+.add-input,
+.where-input {
   margin-top: 23px;
   display: flex;
   height: 55px;
@@ -210,12 +251,13 @@ letter-spacing: 0.46px;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-
 }
 
-
-.add-input, .where-input ::placeholder {
-  color: #8E8E8E;
+.add-input ::placeholder,
+.where-input ::placeholder,
+.report-input ::placeholder,
+.message::placeholder {
+  color: #8e8e8e;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -224,24 +266,32 @@ letter-spacing: 0.46px;
   margin-top: 40px;
   text-align: start;
 }
-
-.add-input, .where-input input {
-  border: none;
-}
-.add-input input {
-  border: none;
+.message::placeholder {
+ align-items: start;
 }
 
- hr {
+
+.add-input input,
+.where-input input,
+.report-input input,
+.message input{
+  border: none;
+  width: 516px;
+  height: 26px;
+}
+
+hr {
   width: 548px;
   height: 1px;
-  background-color: #737B7D;
+  background-color: #737b7d;
 }
 
-.add-form ,.where-form {
+.add-form,
+.where-form {
   width: 545px;
 
 }
+
 
 
 /* .right-where {
@@ -343,4 +393,40 @@ h4 {
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 0.26px;
+}
+
+.report {
+  width: 100vw;
+  height: 100vh;
+  background-color: #386641;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.message {
+  width: 875px;
+  height: 449px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: start; 
+  gap: 10px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.report-input {
+  display: flex;
+  width: 878px;
+  height: 73px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #FFF;
 }

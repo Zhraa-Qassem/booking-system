@@ -14,7 +14,8 @@ function Header() {
               Explore this route finding website
               find the best route for your destination efficiently!
               <span>
-                <button className='btn' >
+              
+                <button className='home-btn' >
                   Explore!
                 </button></span>
             </h3>
