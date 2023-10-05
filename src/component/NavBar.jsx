@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
                 <div>
-                    <Link className='nav-elm ' id='icone' to="/" >Home</Link>
+                    <Link className='nav-elm ' id='icone' to="/" >KIA</Link>
                
                     </div>
                     <div>

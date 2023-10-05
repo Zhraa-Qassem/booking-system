@@ -1,9 +1,14 @@
 import React from 'react'
-
+import '../App.css'
+import WhereToCard from '../component/WhereToCard';
+import Navbar from '../component/NavBar';
+import Footer from '../component/Footer';
 function WhereTo() {
   return (
-    <div>
-      where to
+    <div className='where-to'>
+      <Navbar />
+      <WhereToCard />
+      <Footer />
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../App.css'
 function Report() {
   return (
-    <div>
+    <div className='report'>
      report 
     </div>
   )
