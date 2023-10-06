@@ -1,60 +1,47 @@
-import React, { useReducer } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Booking from './Booking';
+import ConfirmedBooking from './ConfirmedBooking';
 
 const Main = () => {
+  // State to store available times
+  const [availableTimes, setAvailableTimes] = useState([]);
 
-    const seedRandom = function (seed) {
-        var m = 2 ** 35 - 31;
-        var a = 185852;
-        var s = seed % m;
-        return function () {
-            return (s = s * a % m) / m;
-        }
-    }
+  // Function to fetch available times
+  const fetchAvailableTimes = (date) => {
+    // Implement your logic here to fetch available times based on the date
+    // Example logic:
+    const randomTimes = ['17:00', '17:30', '18:00', '18:30', '19:00'];
+    return randomTimes;
+  };
 
-    const fetchAPI = function (date) {
-        let result = [];
-        let random = seedRandom(date.getDate());
-        for (let i = 17; i < 23; i++) {
-            if (random() < 0.5) {
-                result.push(i + ':00');
-            }
-            if (random() > 0.5) {
-                result.push(i + ':30');
-            }
-        }
-        return result;
-    }
+  // Function to handle form submission
+  const handleFormSubmit = (formData) => {
+    // Implement your logic here to submit the form data
+    // Example logic:
+    console.log('Form data submitted:', formData);
+  };
 
-    const submitAPI = function (formData) {
-        return true;
-    }
-
-    const initialState = { availableTimes: fetchAPI(new Date()) };
-    const [state, dispatch] = useReducer(updateTimes, initialState);
-
-    function updateTimes(state, date) {
-        return { availableTimes: fetchAPI(new Date()) }
-    }
-
-    const navigate = useNavigate();
-    function submitForm(formData) {
-        if (submitAPI(formData)) {
-            navigate("/confirmed");
-        }
-    }
-
-    return (
-        <main>
-            <Routes>
-                <Route path='/' element={<Header />} />
-                <Route path='/booking' element={<Booking availableTimes={state} dispatch={dispatch} submitForm={submitForm} />} />
-                <Route path='/' element={<Header />} />
-            </Routes>
-        </main>
-    );
+  return (
+    <main>
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route
+          path="/booking"
+          element={
+            <Booking
+              availableTimes={availableTimes}
+              fetchAvailableTimes={fetchAvailableTimes}
+              setAvailableTimes={setAvailableTimes}
+              handleFormSubmit={handleFormSubmit}
+            />
+          }
+        />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
+      </Routes>
+    </main>
+  );
 };
 
 export default Main;
