@@ -1,52 +1,32 @@
 import React, { useState } from 'react';
 import '../App.css';
-// import koster from '../assets/koster.jpeg'
-import imge from '../assets/imga.jpeg'
+import imge from '../assets/imga.jpeg';
 import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
 
 function WhereToCard() {
-  {/*my states */ }
+  const districts = [
+    'Outer Karrada',
+    'Inner Karrada',
+    'Khulani Square',
+    'Aden Sq',
+    'Damascus Square',
+  ];
+
   const [userLocation, setUserLocation] = useState('');
   const [destination, setDestination] = useState('');
   const navigate = useNavigate();
 
-  const handleLocationInput = (e) => {
+  const handleLocationChange = (e) => {
     setUserLocation(e.target.value);
   };
 
-  const handleDestinationInput = (e) => {
+  const handleDestinationChange = (e) => {
     setDestination(e.target.value);
   };
-  {/*function to put location into the api and convert it to coords  */ }
-  const geocodeLocation = async (location) => {
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/search?q=${location}&format=json`
-      );
-      const data = await response.json();
 
-      if (data.length > 0) {
-        {/*data 0 is the best match   */ }
-        const { lat, lon } = data[0];
-        return { lat, lon };
-      } else {
-        return null;
-      }
-      {/*handel error  */ }
-    } catch (error) {
-      console.error('Error geocoding location:', error);
-      return null;
-    }
-  };
-
-  {/*putting the data from the user into the fetch function to convert string to coords */ }
-  const handleRouteSubmit = async () => {
-    const userCoords = await geocodeLocation(userLocation);
-    const destinationCoords = await geocodeLocation(destination);
-
-    if (userCoords && destinationCoords) {
-      {/*after conversion navigate to another component called route */ }
+  const handleRouteSubmit = () => {
+    if (userLocation && destination) {
       navigate('/route');
     } else {
       alert('Invalid location or destination. Please try again.');
@@ -67,36 +47,44 @@ function WhereToCard() {
         </div>
         <form>
           <div className='where-input'>
-            <label>where are you ?</label>
-            <input
-              type='text'
+            <label>Where are you?</label>
+            <select
+            className='select-input'
               value={userLocation}
-              onChange={handleLocationInput}
-
-            />
-            <hr />
+              onChange={handleLocationChange}
+            >
+              <option value="">Select a district</option>
+              {districts.map((district) => (
+                <option key={district} value={district}>
+                  {district}
+                </option>
+              ))}
+            </select>
+            <hr></hr>
           </div>
           <div className='where-input'>
-            <label>where are you going ?</label>
-            <input
-              type='text'
-              value={destination}
-              onChange={handleDestinationInput}
-
-            />
-            <hr />
-          </div>
+          <label>Where are you going?</label>
+          <select
+          className='select-input'
+            value={destination}
+            onChange={handleDestinationChange}
+          >
+            <option value="">Select a district</option>
+            {districts.map((district) => (
+              <option key={district} value={district}>
+                {district}
+              </option>
+            ))}
+          </select>
+        </div>
+        <hr></hr>
         </form>
-
+<br></br>
         <Button label='Submit' className='btn' onClick={handleRouteSubmit} />
       </div>
       <div className='image-container'>
-      <img src={imge} alt='find way ' className='centered-image' />
-    </div>
-
-     {/* <div className='image-container'>
-      <img src={koster} alt='find way ' className='centered-image' />
-  </div> */}
+        <img src={imge} alt='find way' className='centered-image' />
+      </div>
     </div>
   );
 }

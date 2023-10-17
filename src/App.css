@@ -395,6 +395,20 @@ h1 {
   align-items: center;
 }
 
+.select-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style select options */
+.select-input option {
+  font-size: 16px;
+  padding: 10px;
+}
+
 .report-input,
 .add-input,
 .where-input {
