@@ -5,6 +5,7 @@ import '../App.css'
 function Footer() {
     return (
         <div className='footer'>
+        <div className='foot' >
             <h4>KIA</h4>
             <div className='copy-right'>
                 &copy; {new Date().getFullYear()} Zahraa Qassem
@@ -28,6 +29,7 @@ function Footer() {
                     </h5>
                     <h6> zhraaqassem20@gmail.com</h6>
                 </div>
+            </div>
             </div>
             </div>
         </div>

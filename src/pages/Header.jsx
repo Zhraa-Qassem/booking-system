@@ -1,7 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import white from '../assets/white.jpg'
 import '../App.css'
 function Header() {
+  const navigate = useNavigate();
+
+  const handleSubmit =  () => {
+
+    navigate("/WhereTo");
+
+  };
   return (
     <div>
       <div className="header">
@@ -14,8 +22,8 @@ function Header() {
               Explore this route finding website
               find the best route for your destination efficiently!
               <span>
-              
-                <button className='home-btn' >
+
+                <button className='home-btn' onClick={handleSubmit} >
                   Explore!
                 </button></span>
             </h3>

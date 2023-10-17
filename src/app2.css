@@ -1,0 +1,19 @@
+/* Styles for mobile phones (portrait) */
+@media screen and (max-width: 480px) {
+  /* CSS rules for mobile layout */
+}
+
+/* Styles for mobile phones (landscape) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* CSS rules for landscape mobile layout */
+}
+
+/* Styles for tablets (portrait) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS rules for tablet layout */
+}
+
+@media screen and (min-width: 1601px) {
+  /* CSS rules for smart screen layout */
+}
+
