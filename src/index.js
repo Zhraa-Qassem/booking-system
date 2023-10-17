@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';// Import createRoot from react-do
 import App from './App'; //  main application component
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './config/AuthContext'
 
 // Find the root DOM element
 const root = document.getElementById('root');
@@ -15,7 +16,9 @@ const reactRoot = createRoot(root);
 reactRoot.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+    <AuthProvider>
+    <App />
+  </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -6,6 +6,7 @@ import '../App.css'
 import RouteCard from "./RouteCard";
 import Navbar from "../component/NavBar";
 import Footer from "../component/Footer";
+import '../responsive.css'
 
 function RoutesComponent() {
   const [routes, setRoutes] = useState([]);

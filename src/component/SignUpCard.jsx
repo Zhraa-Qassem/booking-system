@@ -8,8 +8,13 @@ import Button from './Button';
 import '../App.css';
 
 const validationSchema = Yup.object().shape({
+  firstName: Yup.string().required('Required'),
+  lastName: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    .required('Required'),
 });
 
 function SignUpCard() {
@@ -40,12 +45,22 @@ function SignUpCard() {
   return (
     <div className="sign-card">
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }}
         validationSchema={validationSchema}
         onSubmit={handleSignUp}
       >
         {({ isSubmitting }) => (
           <Form>
+            <div className="sign-input">
+              <Field type="text" name="firstName" placeholder="First Name..." />
+              <ErrorMessage name="firstName" component="div" className="error" />
+            </div>
+            <hr />
+            <div className="sign-input">
+              <Field type="text" name="lastName" placeholder="Last Name..." />
+              <ErrorMessage name="lastName" component="div" className="error" />
+            </div>
+            <hr />
             <div className="sign-input">
               <Field type="email" name="email" placeholder="Email..." />
               <ErrorMessage name="email" component="div" className="error" />
@@ -54,6 +69,11 @@ function SignUpCard() {
             <div className="sign-input">
               <Field type="password" name="password" placeholder="Password..." />
               <ErrorMessage name="password" component="div" className="error" />
+            </div>
+            <hr />
+            <div className="sign-input">
+              <Field type="password" name="confirmPassword" placeholder="Confirm Password..." />
+              <ErrorMessage name="confirmPassword" component="div" className="error" />
             </div>
             <hr />
             <div className='btn-or'>

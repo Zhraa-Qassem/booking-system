@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import '../responsive.css'
 import TrendyCards from '../component/TrendyCards'
 function About() {
     return (

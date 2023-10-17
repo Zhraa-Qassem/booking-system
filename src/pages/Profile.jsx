@@ -1,19 +1,20 @@
-import React from 'react'
-import Navbar from '../component/NavBar'
-import Footer from '../component/Footer'
-import '../App.css'
-import ProfileSettings from '../component/ProfileSettings'
+import Navbar from '../component/NavBar';
+import Footer from '../component/Footer';
+import '../App.css';
+import '../responsive.css';
+import ProfileSettings from '../component/ProfileSettings';
+import { useAuth } from '../config/AuthContext'; // Update the import statement
 
-function Profile() {
+const Profile = () => {
+  const { user } = useAuth();
+
   return (
     <div className='sign-in'>
-    <Navbar />
-    hi
-    {/* <ProfileSettings/>*/}
-
-    <Footer />
+      <Navbar />
+      <ProfileSettings user={user} />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

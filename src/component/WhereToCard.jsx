@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
-import find from '../assets/find-way.jpeg';
+// import koster from '../assets/koster.jpeg'
+import imge from '../assets/imga.jpeg'
 import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -90,8 +91,12 @@ function WhereToCard() {
         <Button label='Submit' className='btn' onClick={handleRouteSubmit} />
       </div>
       <div className='image-container'>
-        <img src={find} alt='find way ' className='centered-image' />
-      </div>
+      <img src={imge} alt='find way ' className='centered-image' />
+    </div>
+
+     {/* <div className='image-container'>
+      <img src={koster} alt='find way ' className='centered-image' />
+  </div> */}
     </div>
   );
 }

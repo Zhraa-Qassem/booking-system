@@ -6,6 +6,7 @@ import Button from '../component/Button';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../config/firebase-config';
 import '../App.css';
+import '../responsive.css'
 
 function Report() {
   const { routeId } = useParams();

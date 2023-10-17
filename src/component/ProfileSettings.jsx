@@ -1,73 +1,62 @@
 import React, { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { updateProfile, signOut } from '../config/authFunctions'; 
+import { useAuth } from '../config/AuthContext';
+import { signOut } from 'firebase/auth'; // Add import from Firebase
 
-const ProfileSettings = ({ user }) => {
-  const [updateSuccess, setUpdateSuccess] = useState(null);
-
-  const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    password: Yup.string().min(6, 'Password must be at least 6 characters'),
-  });
-
-  const handleUpdate = async (values) => {
-    try {
-      const message = await updateProfile(user, values);
-      setUpdateSuccess(message);
-    } catch (error) {
-      setUpdateSuccess(error.message);
-    }
-  };
+const ProfileSettings = () => {
+  const { user } = useAuth();
+  const [isEditing, setIsEditing] = useState(false);
+  const [newDisplayName, setNewDisplayName] = useState(user ? user.displayName : '');
+  const [newPhotoURL, setNewPhotoURL] = useState(user ? user.photoURL : '');
 
   const handleSignOut = async () => {
     try {
-      await signOut();
+      await signOut(user.auth); 
+      window.location.href = "/signin"; 
     } catch (error) {
       console.error('Error signing out:', error);
     }
   };
 
+  const handleEditProfile = async () => {
+    try {
+      setIsEditing(false); // Disable editing mode
+      setNewDisplayName(newDisplayName);
+      setNewPhotoURL(newPhotoURL);
+    } catch (error) {
+      console.error('Error updating profile:', error);
+    }
+  };
+
   return (
-    <div>
-      <h2>Edit Profile</h2>
-      <Formik
-        initialValues={{
-          name: user.displayName || '',
-          email: user.email || '',
-          password: '',
-        }}
-        validationSchema={validationSchema}
-        onSubmit={handleUpdate}
-      >
-        {({ isSubmitting }) => (
-          <Form>
-            <div>
-              <label>Name</label>
-              <Field type="text" name="name" />
-              <ErrorMessage name="name" component="div" />
+    <div className='profile'>
+      {user ? (
+        <div className='profile-pic'>
+          <img src={newPhotoURL} alt="User" width="100" height="100" />
+          <br />
+          {isEditing ? (
+            <div className='profile-input'>
+              <input
+                type="text"
+                value={newDisplayName}
+                onChange={(e) => setNewDisplayName(e.target.value)}
+              />
+             
+              
+              <button className='btn' onClick={handleEditProfile}>Save</button>
             </div>
-            <div>
-              <label>Email</label>
-              <Field type="email" name="email" />
-              <ErrorMessage name="email" component="div" />
+          ) : (
+            <div className='btn-cont'>
+              <p>Hello, {newDisplayName}</p>
+              <br />
+              <button  className='btn' onClick={() => setIsEditing(true)}>Edit Profile</button>
+              <br />
             </div>
-            <div>
-              <label>Password (leave empty to keep the same)</label>
-              <Field type="password" name="password" />
-              <ErrorMessage name="password" component="div" />
-            </div>
-            <button type="submit" disabled={isSubmitting}>
-              Update
-            </button>
-          </Form>
-        )}
-      </Formik>
-      <div>
-        <button onClick={handleSignOut}>Sign Out</button>
-      </div>
-      {updateSuccess && <div>{updateSuccess}</div>}
+          )}
+          <button className='btn' onClick={handleSignOut}>Sign Out</button>
+        </div>
+      ) : (
+        <p>You are not logged in</p>
+      )}
     </div>
   );
 };

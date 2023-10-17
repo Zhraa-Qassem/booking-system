@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Button from '../component/Button';
+import '../responsive.css'
 
 function RouteCard({ route, index, reportRoute, deleteRoute }) {
   const buttonClass = 'dis-btn';
@@ -15,12 +15,11 @@ function RouteCard({ route, index, reportRoute, deleteRoute }) {
       <div className='route-dis'>
         <div className='points'>
           <p>Starting Point:</p>
-          <Button className={buttonClass}>{route.startingPoint}</Button>
-          <Button className={buttonClass}>hi</Button>
+          <button className={buttonClass}>{route.startingPoint}</button>
         </div>
         <div className='points'>
           <p>Destination: </p>
-          <Button className={buttonClass}>{route.destination}</Button>
+          <button className={buttonClass}>{route.destination}</button>
         </div>
         <div className='points'>
           <p>Stops:</p>
@@ -29,7 +28,7 @@ function RouteCard({ route, index, reportRoute, deleteRoute }) {
               route.stops.length > 0 ? (
                 route.stops.map((stop, stopIndex) => (
                   <li key={stopIndex}>
-                    Stop {stopIndex + 1}: <Button className={buttonClass}>{stop}</Button>
+                    Stop {stopIndex + 1}: <button className={buttonClass}>{stop}</button>
                   </li>
                 ))
               ) : (

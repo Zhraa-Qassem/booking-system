@@ -3,6 +3,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../config/firebase-config";
 import Button from '../component/Button';
 import green from '../assets/green.jpg';
+import '../responsive.css'
 
 function AddCard() {
   const [newStartingPoint, setNewStartingPoint] = useState("");

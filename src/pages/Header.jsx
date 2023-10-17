@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import white from '../assets/white.jpg'
 import '../App.css'
+import '../responsive.css'
 function Header() {
   const navigate = useNavigate();
 

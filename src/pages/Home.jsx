@@ -3,6 +3,7 @@ import Navbar from '../component/NavBar';
 import Footer from '../component/Footer';
 import Header from './Header';
 import About from './About'
+import '../responsive.css'
 import '../App.css'
 function Home() {
   return (
