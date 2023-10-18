@@ -5,13 +5,31 @@ import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
 
 function WhereToCard() {
+  // const districts = [
+  //   'Outer Karrada',
+  //   'Inner Karrada',
+  //   'Khulani Square',
+  //   'Aden Square',
+  //   'Damascus Square',
+  //   'Nisour Square',
+  // ];
+
   const districts = [
+    'ساحة عدن',
+    'شارع كرادة خارج',
+    'شارع كرادة داخل',
+    'ساحة الخلاني',
+    'ساحة دمشق',
+    'ساحة النسور',
     'Outer Karrada',
-    'Inner Karrada',
-    'Khulani Square',
-    'Aden Sq',
-    'Damascus Square',
-  ];
+    'Outer Karrada',
+    'Outer Karrada',
+    'Outer Karrada',
+    'Outer Karrada',
+    'Outer Karrada',
+    'Outer Karrada',
+
+  ]
 
   const [userLocation, setUserLocation] = useState('');
   const [destination, setDestination] = useState('');

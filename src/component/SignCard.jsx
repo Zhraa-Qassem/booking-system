@@ -6,6 +6,7 @@ import { auth } from '../config/firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import Button from './Button';
 import '../App.css';
+import '../responsive.css'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required('Email is required').email('Invalid email'),

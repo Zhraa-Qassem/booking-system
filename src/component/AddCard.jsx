@@ -4,6 +4,7 @@ import { db } from "../config/firebase-config";
 import Button from '../component/Button';
 import green from '../assets/green.jpg';
 import '../responsive.css'
+import '../App.css'
 
 function AddCard() {
   const [newStartingPoint, setNewStartingPoint] = useState("");
@@ -42,6 +43,11 @@ function AddCard() {
   const addStop = () => {
     setNewStops([...newStops, ""]);
   };
+  const deleteStop = (index) => {
+    const updatedStops = [...newStops];
+    updatedStops.splice(index, 1);
+    setNewStops(updatedStops);
+  };
 
   return (
     <div className='add-card'>
@@ -74,22 +80,31 @@ function AddCard() {
           </div>
           <div className='add-input'>
             <label>Stops:</label>
+            <div className="stop-x">
             {newStops.map((stop, index) => (
-              <div key={index}>
+              <div key={index} className="stop-container">
                 <input
+                  type="text"
                   value={stop}
                   onChange={(e) => handleStopChange(index, e.target.value)}
                 />
+                <button className='delete-stop-btn' type="button" onClick={() => deleteStop(index)}>
+                X
+              </button>
                 <hr style={{ width: '274px' }}></hr>
+               
+               
               </div>
             ))}
-
             <div className="btn-container">
               <button className='add-btn' type="button" onClick={addStop}>
                 Add Stop
               </button>
             </div>
           </div>
+          
+          </div>
+          
         </form>
         <Button label="Submit" className="btn" onClick={onSubmitRoute} />
       </div>

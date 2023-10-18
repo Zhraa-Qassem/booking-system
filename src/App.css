@@ -11,14 +11,15 @@ body {
 
 .home {
   float: right;
-  height : 100vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #386641;
 }
 
 .navBar {
-  align-items: center; /* Center vertically */
+  align-items: center;
+  /* Center vertically */
   margin: 20px auto;
   align-self: center;
   height: 70px;
@@ -32,40 +33,44 @@ body {
   align-items: center;
   justify-items: center;
 }
+
 .pfp {
   display: flex;
   align-items: center;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .profile-picture {
-  width: 40px; 
+  width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
 /* Active Link Styling */
 .active-link {
- height: 40px;
+  height: 40px;
   border-radius: 15px;
-  background-color: tomato; 
+  background-color: tomato;
   color: #fff;
-  transition: transform 0.2s; /* Add a smooth transition on hover */
+  transition: transform 0.2s;
+  /* Add a smooth transition on hover */
 }
 
 .active-link:hover {
-  transform: scale(1.05); /* Add a slight zoom effect on hover */
+  transform: scale(1.05);
+  /* Add a slight zoom effect on hover */
 }
 
 
-.active-link ,
+.active-link,
 .nav-elm {
   text-decoration: none;
   display: inline-flex;
   padding: 0 15px;
   align-items: center;
 }
-.nav-elm{
+
+.nav-elm {
   color: #386641;
 }
 
@@ -155,12 +160,16 @@ h1 {
   align-items: center;
   flex: 1;
 }
+
 .last-btn {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Horizontally center the buttons */
-  justify-content: center; /* Vertically center the buttons */
-  text-align: center; /* Center button text */
+  align-items: center;
+  /* Horizontally center the buttons */
+  justify-content: center;
+  /* Vertically center the buttons */
+  text-align: center;
+  /* Center button text */
 }
 
 .wt-btn {
@@ -206,6 +215,17 @@ h1 {
   align-items: center;
   border-radius: 10px;
   background: rgba(34, 79, 52, 0.40);
+  border: none;
+  color: #FFF;
+}
+.delete-stop-btn{
+  width: auto;
+  padding: 10px;
+  margin: 4px;
+  text-align: center;
+  height: 38px;
+  border-radius: 10px;
+  background: tomato;
   border: none;
   color: #FFF;
 }
@@ -324,10 +344,12 @@ h1 {
 
   gap: 12px;
 }
-.sign-input input{
+
+.sign-input input {
   outline: none;
 }
-.btn-or{
+
+.btn-or {
   display: flex;
   /* height: 55px; */
   padding: 12px 0px;
@@ -349,7 +371,7 @@ h1 {
 
   gap: 12px;
 } */
-.profile{
+.profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -363,14 +385,17 @@ h1 {
   box-shadow: 0px 141px 200px -80px rgba(25, 58, 75, 0.30);
 }
 
-.btn-cont{
+.btn-cont {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
 }
+.signup-card,
 .sign-card {
+  /* margin-bottom: 10%; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -382,6 +407,14 @@ h1 {
   background: white;
   box-shadow: 0px 141px 200px -80px rgba(25, 58, 75, 0.30);
 }
+
+.sign-card{
+  margin: 8.5% 0;
+}
+/* .signup-card{
+
+} */
+
 .sign-up,
 .sign-in {
   margin: 0;
@@ -415,13 +448,13 @@ h1 {
   /* margin-top: 23px; */
   display: flex;
   height: auto;
- padding: 10px;
+  padding: 10px;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
 }
-.report-input label
-.sign-input label,
+
+.report-input label .sign-input label,
 .add-input label,
 .where-input label,
 .report-input label,
@@ -449,6 +482,7 @@ h1 {
   height: 26px;
   padding: 10px;
 }
+
 /* .add-input label{
 color: brown;
 } */
@@ -502,7 +536,7 @@ hr {
 }
 
 .footer {
-  position: fixed;
+
   bottom: 0;
   padding: 0 10px;
   margin-top: 30px;
@@ -542,6 +576,7 @@ h4 {
 .copy-right {
   color: #328B56;
   text-align: center;
+  justify-self: center;
   font-size: 16px;
   font-style: normal;
   font-weight: 400px;
@@ -672,13 +707,14 @@ h4 {
 }
 
 .routes h1 {
-  text-align: center; /* Center the header text */
+  text-align: center;
+  /* Center the header text */
   margin: 30px 0;
 }
 
 .route-card {
   border-radius: 8px;
-background-color: #de6a16;
+  background-color: #de6a16;
   /* background-color: #DE6A16; */
   width: 40%;
   text-align: center;
@@ -687,8 +723,10 @@ background-color: #de6a16;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.5px;
-  margin: 16px 0; /* Add margin below each card */
+  margin: 16px 0;
+  /* Add margin below each card */
 }
+
 .points p {
   width: 25%;
   display: inline;
@@ -709,14 +747,16 @@ background-color: #de6a16;
   background: none;
   padding: 8px;
 }
-.btn-style{
+
+.btn-style {
   width: 100%;
   display: flex;
   justify-content: space-around;
 
-  
+
 }
-.report-button{
+
+.report-button {
   color: white;
   background-color: tomato;
   border-radius: 14px;
@@ -724,9 +764,11 @@ background-color: #de6a16;
   border: none;
   padding: 0 6px;
 }
-.report-button:active{
+
+.report-button:active {
   background-color: #8dc0a1;
 }
+
 .route-dis {
   background-color: white;
   /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
@@ -752,7 +794,8 @@ background-color: #de6a16;
   display: inline;
   height: 41px;
 }
-.points{
+
+.points {
   flex: 1;
   display: flex;
   justify-items: flex-start;
@@ -761,7 +804,17 @@ background-color: #de6a16;
   width: 100%;
 
 }
-.stops-btn{
+.stop-x{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+.stop-container{
+  width: 50%;
+}
+.stops-btn {
   display: flex;
   flex-direction: column;
 }
@@ -774,19 +827,22 @@ background-color: #de6a16;
 
 
 
-button{
+button {
   cursor: pointer;
 }
+
 btn,
-button:hover{
+button:hover {
   transform: scale(1.05);
   box-shadow: 0 4px #b2d7c5;
- 
+
 }
+
 btn,
 button:active {
   background-color: tomato;
   color: white;
-  transform: scale(0.95); /* Add a slight scale effect when pressed */
+  transform: scale(0.95);
+  /* Add a slight scale effect when pressed */
   transition: transform 0.1s;
 }

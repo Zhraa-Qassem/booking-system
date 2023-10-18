@@ -6,6 +6,7 @@ import { auth, googleProvider } from '../config/firebase-config';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import Button from './Button';
 import '../App.css';
+import '../responsive.css'
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required('Required'),
@@ -43,7 +44,7 @@ function SignUpCard() {
   };
 
   return (
-    <div className="sign-card">
+    <div className="signup-card">
       <Formik
         initialValues={{ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }}
         validationSchema={validationSchema}
