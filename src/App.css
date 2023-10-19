@@ -283,9 +283,9 @@ h1 {
   border-radius: 50px;
   margin: 20px;
   background: linear-gradient(to left,
-      #1634de 0%,
+     #de6a16 0%,
       #de6a16 20%,
-      rgb(157, 42, 42) 20%,
+      white 20%,
       white 100%);
 }
 
