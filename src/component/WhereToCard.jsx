@@ -5,6 +5,19 @@ import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
 
 function WhereToCard() {
+
+  // const [userLocation, setUserLocation] = useState('');
+  // const [destination, setDestination] = useState('');
+  // const navigate = useNavigate();
+
+  // const handleRouteSubmit = () => {
+  //   if (userLocation && destination) {
+  //     navigate(`/filtered-routes/${userLocation}/${destination}`);
+  //   } else {
+  //     alert('Invalid location or destination. Please try again.');
+  //   }
+  // }
+  
   // const districts = [
   //   'Outer Karrada',
   //   'Inner Karrada',

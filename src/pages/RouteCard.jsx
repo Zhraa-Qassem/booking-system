@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import '../responsive.css'
+import { Link } from 'react-router-dom';
 
 function RouteCard({ route, index, reportRoute, deleteRoute }) {
   const buttonClass = 'dis-btn';
@@ -43,7 +44,9 @@ function RouteCard({ route, index, reportRoute, deleteRoute }) {
           <button className="report-button" onClick={() => reportRoute(route)}>
             ! Report
           </button>
+         {/* <Link to={`/route/${route.id}`}>*/}
           <button className='btn'>View</button>
+          {/*</Link>*/}
           <button className="delete-button" onClick={() => deleteRoute(route)}>
             Delete
           </button>

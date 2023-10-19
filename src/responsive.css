@@ -129,6 +129,15 @@
     padding: 40px;
     
 }
+.stop-container{
+  align-items: flex-start;
+}
+.delete-stop-btn{
+  margin: 0;
+}
+.stop-x {
+  align-items: initial;
+}
   .add-card,
   .where-card {
     flex-direction: column;

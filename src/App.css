@@ -1,3 +1,4 @@
+
 * {
   /* font-family: 'Cairo', sans-serif; */
   font-family: 'Ruda', sans-serif;
@@ -421,7 +422,9 @@ h1 {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #328B56;
+  /* background-color: #328B56; */
+  background-image: url('./assets/grn.png'); 
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;

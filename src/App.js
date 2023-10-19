@@ -10,6 +10,7 @@ import RouteComponent from './pages/RouteCard';
 import SignUp from './pages/SignUp';
 import RoutesComponent from './pages/RoutesComponent';
 import SignIn from './pages/SignIn';
+import RouteDetail from './pages/RouteDetail';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 // Initialize Firebase Authentication
@@ -58,6 +59,7 @@ function App() {
           <Route path="/Report/:routeId" element={<Report />} />
           <Route path="/RoutesComponent" element={<RoutesComponent />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/route/:id" element={<RouteDetail />} />
         </Routes>
       </div>
     </div>
