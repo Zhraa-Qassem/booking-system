@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../config/firebase-config";
 import Button from '../component/Button';
-import green from '../assets/green.jpg';
+import green from '../assets/green.png';
 import '../responsive.css'
 import '../App.css'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import white from '../assets/white.jpg'
+import white from '../assets/white.png'
 import '../App.css'
 import '../responsive.css'
 function Header() {
