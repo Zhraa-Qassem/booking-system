@@ -1,9 +1,21 @@
 @media (max-width: 768px) {
 
   .footer {
+    /* display: none; */
+   width:  100%;
+  }
+  .foot h4,
+  .mini-contact img{
     display: none;
   }
 
+  .copy-right {
+    display: none;
+  }
+  .signup-card,
+  .sign-card{
+    width: auto;
+  }
   .nav-elm :link {
     font-size: 10px;
   }
@@ -155,10 +167,14 @@
     white-space: normal;
     min-height: 200px;
   }
-  .btn, .wt-btn{
+  .v-btn{
     width: auto;
-    padding: 10%;
+ 
   }
+  .btn,
+.wt-btn {
+  width: 100px;
+}
   .route-header {
     width: auto;
     padding-right: 10px;
