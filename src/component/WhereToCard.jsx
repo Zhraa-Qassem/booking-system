@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../config/AuthContext';
 import imge from '../assets/imga.jpeg';
 import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
-import { db } from "../config/firebase-config";
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { db } from '../config/firebase-config';
+import { collection, getDocs } from 'firebase/firestore';
+import RouteCard from '../component/RouteCard';
 
 function WhereToCard() {
   const [userLocation, setUserLocation] = useState('');
   const [destination, setDestination] = useState('');
+  const [routes, setRoutes] = useState([]); // Define state variable for routes
+  const [loading, setLoading] = useState(false); // Define state variable for loading
+  const { user } = useAuth();
   const navigate = useNavigate();
-    const { user } = useAuth();
 
   const handleLocationChange = (e) => {
     setUserLocation(e.target.value);
@@ -22,58 +25,48 @@ function WhereToCard() {
 
   const handleRouteSubmit = async () => {
     if (userLocation && destination) {
+      setLoading(true);
+
+      // Fetch routes from the database and filter them
       const routesCollectionRef = collection(db, 'initialRoutes');
-      const routesQuery = query(routesCollectionRef, where('startingPoint', '==', userLocation), where('destination', '==', destination));
-      
-      try {
-        const querySnapshot = await getDocs(routesQuery);
-        const routesData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
+      const querySnapshot = await getDocs(routesCollectionRef);
+      const routesData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
 
-        const reversedRoutes = routesData.map((route) => {
-          if (route.startingPoint === userLocation && route.destination === destination) {
-            return route;
-          } else if (route.startingPoint === destination && route.destination === userLocation) {
-            return {
-              ...route,
-              startingPoint: userLocation,
-              destination: destination,
-              stops: route.stops.slice().reverse(),
-            };
-          } else {
-            return route;
-             console.log(route)
-          }
-          console.log(route)
-        }
-       
-        );
+      // filtering logic based on user input
+      const filteredRoutes = routesData.filter((route) => {
+        //
+        // routes where the userLocation is a stop
+        return route.stops.includes(userLocation) && route.stops.includes(destination);
+      });
 
-        navigate('/filtered-routes', { state: { filteredRoutes: reversedRoutes } });
-      } catch (error) {
-        console.error('Error fetching routes: ', error);
-      }
+      setRoutes(filteredRoutes);
+      setLoading(false);
+
+      // You can navigate to the routes component with the filtered routes
+      navigate('/RoutesComponent', { state: { filteredRoutes } });
     } else {
       alert('Invalid location or destination. Please try again.');
     }
-  };
+  }
+  
 
   const districts = [
     'ساحة عدن',
-    'شارع كرادة خارج',
     'شارع كرادة داخل',
     'ساحة الخلاني',
     'ساحة دمشق',
     'ساحة النسور',
     'نفق الشرطة',
     'مول بابلون',
-    'Outer Karrada',
-    'Outer Karrada',
-    'Outer Karrada',
-    'Outer Karrada',
-    'Outer Karrada',
+    'ساحة الطيران',
+    'البياع',
+    'الجادرية',
+    'مول المنصور',
+    'معرض بغداد',
+        'شارع كرادة داخل',
   ];
 
   return (
@@ -84,11 +77,11 @@ function WhereToCard() {
             <span style={{ color: 'black' }}> Find your</span> route
           </h1>
           <div className='where-p'>
-          {user ? (
-            <p>Hello, {user.displayName}</p>
-          ) : (
-            <p>Hello there</p>
-          )}
+            {user ? (
+              <p>Hello, {user.displayName}</p>
+            ) : (
+              <p>Hello there</p>
+            )}
             <p>please Enter your location and destination below.</p>
           </div>
         </div>

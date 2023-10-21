@@ -5,31 +5,48 @@ import { useNavigate } from 'react-router-dom';
 import RouteCard from "../component/RouteCard";
 import Navbar from "../component/NavBar";
 import Footer from "../component/Footer";
+import { useLocation } from 'react-router-dom'; // Import useLocation
 
 function RoutesComponent() {
   const [routes, setRoutes] = useState([]);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchRoutes = async () => {
-      try {
-        const routesCollectionRef = collection(db, "initialRoutes");
-        const querySnapshot = await getDocs(routesCollectionRef);
-        const routesData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setRoutes(routesData);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching routes: ", error);
-        setLoading(false);
-      }
-    };
+  // Access query parameters from useLocation
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const userLocation = queryParams.get('userLocation');
+  const destination = queryParams.get('destination');
 
-    fetchRoutes();
-  }, []);
+useEffect(() => {
+  const fetchRoutes = async () => {
+    try {
+      const routesCollectionRef = collection(db, "initialRoutes");
+      const querySnapshot = await getDocs(routesCollectionRef);
+      const routesData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      let filteredRoutes = routesData;
+
+      if (userLocation && destination) {
+        filteredRoutes = routesData.filter((route) => {
+          return route.startingPoint === userLocation && route.destination === destination;
+        });
+      }
+
+      setRoutes(filteredRoutes);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching routes: ", error);
+      setLoading(false);
+    }
+  };
+
+  fetchRoutes();
+}, [userLocation, destination]);
+
 
   const reportRoute = async (route) => {
     try {
@@ -75,11 +92,14 @@ function RoutesComponent() {
         <div className="loading">
           <p>Loading...</p>
         </div>
+      ) : routes.length === 0 ? (
+        <p>No matching routes found</p>
       ) : (
         routes.map((route, index) => (
           <RouteCard key={route.id} route={route} index={index} reportRoute={reportRoute} deleteRoute={deleteRoute} />
         ))
       )}
+      
       <Footer />
     </div>
   );
