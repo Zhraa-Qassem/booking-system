@@ -305,7 +305,7 @@
     height: 260px; */
     /* border-top-left-radius: 100px; */
     padding-left: 35px;
-    width: 554px;
+    width: 500px;
     height: 610px;
     border-top-left-radius: 60x;
     border-top-right-radius: 0;
@@ -363,12 +363,12 @@
 
 
   .about p {
-    font-size: 14px;
+    font-size: 19px;
 
   }
 
   .about li {
-    font-size: 14px;
+    font-size: 19px;
   }
 
   .left {
