@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../config/AuthContext';
 import imge from '../assets/imga.jpeg';
 import Button from '../component/Button';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../config/firebase-config';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import RouteCard from '../component/RouteCard';
 
 function WhereToCard() {
   const [userLocation, setUserLocation] = useState('');
   const [destination, setDestination] = useState('');
-  const [routes, setRoutes] = useState([]); // Define state variable for routes
-  const [loading, setLoading] = useState(false); // Define state variable for loading
+  const [filteredRoutes, setFilteredRoutes] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Call useNavigate as a function
 
   const handleLocationChange = (e) => {
     setUserLocation(e.target.value);
@@ -23,30 +23,10 @@ function WhereToCard() {
     setDestination(e.target.value);
   };
 
+
   const handleRouteSubmit = async () => {
     if (userLocation && destination) {
-      setLoading(true);
-
-      // Fetch routes from the database and filter them
-      const routesCollectionRef = collection(db, 'initialRoutes');
-      const querySnapshot = await getDocs(routesCollectionRef);
-      const routesData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-
-      // filtering logic based on user input
-      const filteredRoutes = routesData.filter((route) => {
-        //
-        // routes where the userLocation is a stop
-        return route.stops.includes(userLocation) && route.stops.includes(destination);
-      });
-
-      setRoutes(filteredRoutes);
-      setLoading(false);
-
-      // You can navigate to the routes component with the filtered routes
-      navigate('/RoutesComponent', { state: { filteredRoutes } });
+      navigate(`/RoutesComponent?userLocation=${userLocation}&destination=${destination}`);
     } else {
       alert('Invalid location or destination. Please try again.');
     }
@@ -66,7 +46,7 @@ function WhereToCard() {
     'الجادرية',
     'مول المنصور',
     'معرض بغداد',
-        'شارع كرادة داخل',
+        'شارع كرادة د',
   ];
 
   return (

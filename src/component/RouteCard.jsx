@@ -47,9 +47,10 @@ function RouteCard({ route, index, reportRoute, deleteRoute }) {
          {/* <Link to={`/route/${route.id}`}>*/}
           <button className='v-btn'>View</button>
           {/*</Link>*/}
-          <button className="delete-button" onClick={() => deleteRoute(route)}>
+          {/* <button className="delete-button" onClick={() => deleteRoute(route)}>
             Delete
           </button>
+          */}
         </div>
       </div>
     </div>
