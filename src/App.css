@@ -41,10 +41,20 @@ body {
   align-items: center;
   margin-left: auto;
 }
+.profile-input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
 .profile-pic{
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
+}
+.profile-pic .btn-cont {
+  gap: 0;
 }
 .profile-pic img{
   width: 200;
@@ -512,7 +522,13 @@ width: 100%;}
 
 
 
-
+.profile-input input{
+  outline: #aadfbf;
+  border: ipx #aadfbf solid ;
+  padding: 8px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+}
 .add-input input,
 .where-input input,
 .report-input input,

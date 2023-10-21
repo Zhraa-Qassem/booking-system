@@ -10,8 +10,8 @@ const ProfileSettings = () => {
 
   const handleSignOut = async () => {
     try {
-      await signOut(user.auth); 
-      window.location.href = "/signin"; 
+      await signOut(user.auth);
+      window.location.href = "/signin";
     } catch (error) {
       console.error('Error signing out:', error);
     }
@@ -40,18 +40,19 @@ const ProfileSettings = () => {
                 value={newDisplayName}
                 onChange={(e) => setNewDisplayName(e.target.value)}
               />
-             
-              
+
+
               <button className='btn' onClick={handleEditProfile}>Save</button>
             </div>
           ) : (
             <div className='btn-cont'>
               <p>Hello, {newDisplayName}</p>
               <br />
-              <button  className='btn' onClick={() => setIsEditing(true)}>Edit Profile</button>
+              <button className='btn' onClick={() => setIsEditing(true)}>Edit Profile</button>
               <br />
             </div>
           )}
+
           <button className='btn' onClick={handleSignOut}>Sign Out</button>
         </div>
       ) : (
