@@ -1,31 +1,276 @@
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
-
-  .header {
-    width: fit-content;
+  .footer {
+    display: none;
   }
 
-  .right {
-    display: none;
-    /* width: 154px;
-  height:20px;
-  border-top-left-radius: 150px;
-  border-top-right-radius: 0; */
+  .nav-elm :link {
+    font-size: 10px;
+  }
+
+  .icone {
+    font-size: 20x;
+  }
+
+  .home {
+    width: 100%;
+  }
+
+  .navBar {
+    width: 80%;
+    height: auto;
+    align-items: center;
+
+  }
+
+  .nav-elm {
+    padding: 0 8px;
+  }
+
+  .header {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .home {
+    width: 100;
+    /* padding-right: 15px; */
+  }
+
+
+
+  h1 {
+    font-size: 50px;
+
+  }
+
+  .about {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    padding: 30px;
+  }
+
+
+  .about p {
+    font-size: 8px;
+
+  }
+
+  .about li {
+    font-size: 14px;
+  }
+
+  .left {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
   }
 
   .left h3 {
-    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    font-size: 16px;
     margin-bottom: 5px;
     font-weight: 200px;
-    line-height: 100%;
+    line-height: 170%;
+  }
+
+  .trendy-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foot {
+    width: auto;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  hr {
+    width: 80%;
+  }
+
+  .signup-card,
+  .sign-card {
+    gap: 20px;
+    margin: 6% 0;
+    padding: 40px;
 
   }
+
+  .stop-container {
+    align-items: flex-start;
+  }
+
+  .delete-stop-btn {
+    margin: 0;
+  }
+
+  .stop-x {
+    align-items: initial;
+  }
+
+  .add-card,
+  .where-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    width: auto;
+    /* padding: 30px; */
+    border-radius: 40px;
+    margin: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to left, #de6a16 0%, #de6a16 15%, white 15%, white 100%);
+  }
+
+  .add-header,
+  .where-header {
+    /* width: auto; */
+    width: 363px;
+
+    padding: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600px;
+    line-height: 20px;
+    letter-spacing: 0.46px;
+    white-space: normal;
+    min-height: 200px;
+  }
+  .btn, .wt-btn{
+    width: auto;
+    padding: 10%;
+  }
+  .route-header {
+    width: auto;
+    padding-right: 10px;
+  }
+
+
+
+    
+
+  .add-form,
+  .where-form {
+    width: auto;
+  }
+  .stop-container {
+    padding-top: 5px;
+   width: auto;
 }
 
-/* Small Devices (Landscape Tablets):
-768px to 991.98px:  */
+  .image-container,
+  .image-container img {
+    width: 363px;
+    height: 336px;
+    object-fit: cover;
+    border-radius: 110px 0px 100px 52px;
+  }
+ 
+  .report-input,
+  .message{
+    width: 80%;
+  }
+  
 
-@media (min-width: 600px) and (max-width: 1000px) {
+  .image-container img {
+    width: 463px;
+    height: 436px;
+  }
+
+  .select-input {
+    width: 70%;
+  }
+
+  .sign-input input,
+  .add-input input,
+  .where-input input,
+  .report-input input,
+  .message input {
+
+    width: 80%;
+
+    padding: 10px;
+  }
+
+  .sign-input input,
+  .add-input input,
+  .where-input input,
+  .report-input input {
+
+    height: 26px;
+
+  }
+
+  .message input {
+    height: 50%;
+  }
+
+  .route-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    /* gap: 48px; */
+    flex-shrink: 0;
+    padding: 15px;
+  }
+
+
+  .route-card {
+    border-radius: 8px;
+    width: 70%;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    margin: 16px 0;
+  }
+
+  .points {
+    gap: 15%;
+  }
+
+  .points li {
+    margin: 8px;
+  }
+
+
+  .dis-btn {
+    width: auto;
+    margin: 5px;
+  }
+
+  /* .route-dis{
+  width: 100%;
+} */
+
+
+}
+
+
+@media (min-width: 700px) and (max-width: 1000px) {
   .navBar {
     align-items: center;
     margin: 10px auto;
@@ -37,14 +282,31 @@
   }
 
   .right {
-    margin-bottom: 0;
-    float: right;
-    text-align: center;
-    width: 200px;
-    height: 260px;
-    border-top-left-radius: 75px;
+    /* width: 200px;
+    height: 260px; */
+    /* border-top-left-radius: 100px; */
+    padding-left: 35px;
+    width: 554px;
+    height: 610px;
+    border-top-left-radius: 60x;
     border-top-right-radius: 0;
   }
+
+  .routes,
+  .add-header,
+  .where-header
+ {
+    width: auto;
+    padding: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600px;
+    line-height: 20px;
+    letter-spacing: 0.46px;
+    white-space: normal;
+    min-height: 200px;
+  }
+
 
   .home {
     width: 100;
@@ -122,22 +384,27 @@
   hr {
     width: 80%;
   }
+
   .signup-card,
   .sign-card {
     gap: 20px;
     margin: 6% 0;
     padding: 40px;
-    
-}
-.stop-container{
-  align-items: flex-start;
-}
-.delete-stop-btn{
-  margin: 0;
-}
-.stop-x {
-  align-items: initial;
-}
+
+  }
+
+  .stop-container {
+    align-items: flex-start;
+  }
+
+  .delete-stop-btn {
+    margin: 0;
+  }
+
+  .stop-x {
+    align-items: initial;
+  }
+
   .add-card,
   .where-card {
     flex-direction: column;
@@ -150,6 +417,7 @@
     margin-bottom: 20px;
     background: linear-gradient(to left, #de6a16 0%, #de6a16 15%, white 15%, white 100%);
   }
+
 
   .image-container {
     width: 463px;
@@ -166,21 +434,11 @@
   .select-input {
     width: 70%;
   }
-  .sign-input input,
-  .report-input input,
-  .add-input input,
-  .where-input input,
-  .report-input input,
-  .message input {
 
-    width: 80%;
-    height: 26px;
-    padding: 10px;
-  }
 
   .route-header {
     display: flex;
-    align-items: center; 
+    align-items: center;
     width: 100%;
     height: auto;
     font-size: 14px;
@@ -190,7 +448,7 @@
   }
 
 
-.route-card {
+  .route-card {
     border-radius: 8px;
     width: 70%;
     text-align: center;
@@ -200,21 +458,23 @@
     line-height: 24px;
     letter-spacing: 0.5px;
     margin: 16px 0;
-}
+  }
 
-.points{
-  gap: 15%;
-}
-.points li{
-  margin: 8px;
-}
+  .points {
+    gap: 15%;
+  }
+
+  .points li {
+    margin: 8px;
+  }
 
 
-.dis-btn {
-  width: auto;
-  margin: 5px;
-}
-/* .route-dis{
+  .dis-btn {
+    width: auto;
+    margin: 5px;
+  }
+
+  /* .route-dis{
   width: 100%;
 } */
 

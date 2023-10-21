@@ -6,13 +6,13 @@ import Profile from './pages/Profile';
 import WhereTo from './pages/WhereTo';
 import Add from './pages/Add';
 import Report from './pages/Report';
-import RouteComponent from './pages/RouteCard';
+import RouteComponent from './component/RouteCard';
 import SignUp from './pages/SignUp';
 import RoutesComponent from './pages/RoutesComponent';
 import SignIn from './pages/SignIn';
 import RouteDetail from './pages/RouteDetail';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-
+import FilteredRoutes from './component/FilteredRoutes';
 // Initialize Firebase Authentication
 const auth = getAuth();
 
@@ -60,6 +60,8 @@ function App() {
           <Route path="/RoutesComponent" element={<RoutesComponent />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/route/:id" element={<RouteDetail />} />
+          <Route path="/filtered-routes" element={<FilteredRoutes />} />
+
         </Routes>
       </div>
     </div>

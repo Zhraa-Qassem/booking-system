@@ -9,12 +9,16 @@ import '../App.css';
 import '../responsive.css'
 
 function Report() {
-  const { routeId } = useParams();
+  const { routeId: initialRouteId } = useParams();
+  const [routeId, setRouteId] = useState(initialRouteId);
   const location = useLocation();
   const [issue, setIssue] = useState('');
+  
 
   const route = location.state.route;
-
+  const handleRouteIdChange = (event) => {
+    setRouteId(event.target.value);
+  };
   const reportRoute = async () => {
     try {
       const reportedRoute = {
@@ -41,15 +45,18 @@ function Report() {
   return (
     <div className="report">
       <Navbar />
+      <div className='report-header'>
       <h1>
         Report <span style={{ color: 'white' }}> the issue</span>
       </h1>
+      </div>
       <div>
         <input
           className="report-input"
           placeholder="Route ID"
           value={routeId}
-          readOnly
+          onChange={handleRouteIdChange}
+          
         />
       </div>
       <input
@@ -57,6 +64,7 @@ function Report() {
         placeholder="Your issue..."
         value={issue}
         onChange={(e) => setIssue(e.target.value)}
+        style={{ height: '449px' }}
       />
       <Button label={'Report'} className={'wt-btn'} onClick={reportRoute} />
       <Footer />

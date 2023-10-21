@@ -10,7 +10,6 @@ function WhereTo() {
     <div className='where-to'>
       <Navbar />
       <WhereToCard />
-
       <Footer />
     </div>
   )

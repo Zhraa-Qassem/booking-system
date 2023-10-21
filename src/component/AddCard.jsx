@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
+import { useAuth } from '../config/AuthContext';
 import { db } from "../config/firebase-config";
 import Button from '../component/Button';
 import green from '../assets/green.png';
@@ -10,6 +11,7 @@ function AddCard() {
   const [newStartingPoint, setNewStartingPoint] = useState("");
   const [newDestination, setNewDestination] = useState("");
   const [newStops, setNewStops] = useState([""]); // Initialize with one empty stop
+  const { user } = useAuth();
 
   const routesCollectionRef = collection(db, "initialRoutes");
 
@@ -55,7 +57,11 @@ function AddCard() {
         <div className='add-header'>
           <h1> <span style={{ color: 'black' }}> thank you  </span>for cooperating!</h1>
           <div className='add-p'>
-            <p>hello user!</p>
+          {user ? (
+            <p>Hello, {user.displayName}</p>
+          ) : (
+            <p>Hello there</p>
+          )}
             <p>please Enter your location and destination below.</p>
           </div>
         </div>
@@ -88,10 +94,11 @@ function AddCard() {
                   value={stop}
                   onChange={(e) => handleStopChange(index, e.target.value)}
                 />
+                <hr style={{ width: '274px' }}></hr>
                 <button className='delete-stop-btn' type="button" onClick={() => deleteStop(index)}>
                 X
               </button>
-                <hr style={{ width: '274px' }}></hr>
+                
                
                
               </div>

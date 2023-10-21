@@ -1,7 +1,7 @@
 // RouteDetail.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import RouteCard from './RouteCard'; 
+import RouteCard from '../component/RouteCard'; 
 import CommentSection from '../component/CommentSection';
 import { db } from '../config/firebase-config';
 import { collection, query, where, onSnapshot } from 'firebase/firestore';

@@ -4,6 +4,7 @@
   font-family: 'Ruda', sans-serif;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -40,12 +41,22 @@ body {
   align-items: center;
   margin-left: auto;
 }
-
+.profile-pic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-pic img{
+  width: 200;
+  height: 200;
+  border-radius: 50%;
+}
 .profile-picture {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 
 /* Active Link Styling */
 .active-link {
@@ -284,11 +295,29 @@ h1 {
   margin: 20px;
   background: linear-gradient(to left,
      #de6a16 0%,
-      #de6a16 20%,
-      white 30%,
+      #de6a16 15%,
+      white 25%,
       white 100%);
 }
 
+.loading{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 
+              50% 50% no-repeat #328B56;
+}
+.loading p {
+  font-size: 40px;
+  font-weight: 600px;
+  text-align: center;
+  color: #ffffff;
+  margin: 20px;
+}
+.report-header,
 .add-header,
 .where-header {
   padding-top: 14px;
@@ -297,18 +326,21 @@ h1 {
   align-items: flex-start;
   justify-content: center;
   gap: 33px;
+  height: auto;
+  min-height: 100px; 
+  white-space: normal;
 }
 
 .routes h1,
 .add-header h1,
 .where-header h1,
-.report h1 {
+.report-header h1 {
   color: #de6a16;
   font-family: Montserrat;
   font-size: 46px;
   font-style: normal;
-  font-weight: 700px;
-  line-height: 24px;
+  font-weight: 700; 
+  line-height: 1.2; 
   letter-spacing: 0.46px;
 }
 
@@ -474,7 +506,7 @@ h1 {
 
 
 
-.report-input input,
+
 .add-input input,
 .where-input input,
 .report-input input,
@@ -631,7 +663,7 @@ h4 {
 
 .report {
   width: 100vw;
-  height: 100vh;
+
   background-color: #386641;
   display: flex;
   gap: 25px;
@@ -657,12 +689,12 @@ h4 {
 .report-input {
   display: flex;
   width: 878px;
-  height: 73px;
+  height: 80px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   background: #FFF;
 }
 
