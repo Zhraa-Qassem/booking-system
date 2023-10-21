@@ -617,7 +617,7 @@ hr {
   margin-right: 30px;
   display: flex;
   width: 471px;
-  height: 40px;
+  height: auto;
   align-items: flex-start;
   gap: 50px;
 }
