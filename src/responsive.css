@@ -2,20 +2,23 @@
 
   .footer {
     /* display: none; */
-   width:  100%;
+    width: 100%;
   }
+
   .foot h4,
-  .mini-contact img{
+  .mini-contact img {
     display: none;
   }
 
   .copy-right {
     display: none;
   }
+
   .signup-card,
-  .sign-card{
+  .sign-card {
     width: auto;
   }
+
   .nav-elm :link {
     font-size: 10px;
   }
@@ -167,14 +170,17 @@
     white-space: normal;
     min-height: 200px;
   }
-  .v-btn{
+
+  .v-btn {
     width: auto;
- 
+
   }
+
   .btn,
-.wt-btn {
-  width: 100px;
-}
+  .wt-btn {
+    width: 140px;
+  }
+
   .route-header {
     width: auto;
     padding-right: 10px;
@@ -182,16 +188,17 @@
 
 
 
-    
+
 
   .add-form,
   .where-form {
     width: auto;
   }
+
   .stop-container {
     padding-top: 5px;
-   width: auto;
-}
+    width: auto;
+  }
 
   .image-container,
   .image-container img {
@@ -200,12 +207,12 @@
     object-fit: cover;
     border-radius: 110px 0px 100px 52px;
   }
- 
+
   .report-input,
-  .message{
+  .message {
     width: 80%;
   }
-  
+
 
   .image-container img {
     width: 463px;
@@ -240,15 +247,8 @@
     height: 50%;
   }
 
-  .route-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    font-size: 14px;
-    /* gap: 48px; */
-    flex-shrink: 0;
-    padding: 15px;
+  .routes {
+    padding: 0;
   }
 
 
@@ -310,10 +310,9 @@
 
   .routes,
   .add-header,
-  .where-header
- {
+  .where-header {
     width: auto;
-    padding: 10px;
+
     font-size: 20px;
     font-style: normal;
     font-weight: 600px;
@@ -321,6 +320,11 @@
     letter-spacing: 0.46px;
     white-space: normal;
     min-height: 200px;
+  }
+
+  .add-header,
+  .where-header {
+    padding: 10px;
   }
 
 
@@ -452,16 +456,7 @@
   }
 
 
-  .route-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    font-size: 14px;
-    /* gap: 48px; */
-    flex-shrink: 0;
-    padding: 15px;
-  }
+
 
 
   .route-card {
