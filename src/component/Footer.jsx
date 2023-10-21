@@ -19,7 +19,11 @@ function Footer() {
                     <div>
                         <h5>phone
                         </h5>
-                        <h6> 07708060852</h6>
+                        <h6>
+                        <a
+                         href="tel:07708060852">07708060852
+                        </a>
+                        </h6>
                     </div>
                 </div>
                 <div className='mini-contact'>
@@ -27,7 +31,9 @@ function Footer() {
                 <div>
                     <h5>E-MAIL
                     </h5>
-                    <h6> zhraaqassem20@gmail.com</h6>
+                    <h6>
+                    <a href="mailto:zhraaqassem20@gmail.com?subject=get in touch">zhraaqassem20@gmail.com</a>
+                  </h6>
                 </div>
             </div>
             </div>

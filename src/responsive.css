@@ -64,7 +64,7 @@
   }
 
   .about {
-    width: 100%;
+    width: auto;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -75,10 +75,10 @@
   }
 
 
-  .about p {
+  /* .about p {
     font-size: 8px;
 
-  }
+  } */
 
   .about li {
     font-size: 14px;

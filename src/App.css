@@ -472,6 +472,7 @@ width: 100%;}
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  color: #328B56;
 }
 
 /* Style select options */
@@ -491,6 +492,7 @@ width: 100%;}
   align-items: flex-start;
   gap: 12px;
 }
+
 
 .report-input label ,
 .sign-input label,
@@ -636,8 +638,9 @@ h4 {
   height: 28px;
   width: 28px;
 }
-
+.mini-contact a,
 .mini-contact h6 {
+  text-decoration: none;
   color: #328B56;
   font-size: 13px;
   font-style: normal;
